@@ -1,0 +1,177 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"app-plus": {
+					"scrollIndicator":"none", //隐藏滚动条
+					//搜索框配置
+					"titleNView":{
+						"searchInput":{
+							"align":"center",
+							"backgroundColor":"#F7F7F7",
+							"borderRadius":"4px",
+							"placeholder":"Search for anything...",
+							"placeholderColor":"#CCCCCC",
+							"disabled":true
+						},
+						//配置按钮
+						"buttons":[
+							{
+								"color":"#000000",
+								"colorPressed":"#BBBBBB",
+								"float":"right",
+								"fontSize":"22px",
+								"fontSrc":"/static/font/iconfont.ttf",
+								"text":"\ue634"
+								
+							}
+						]
+					}
+					
+				}
+			}
+		}
+        ,{
+            "path" : "pages/publish/publish",
+            "style" : {}
+        }
+		,{
+			"path":"pages/user-chat/user-chat",
+			"style": {
+				"app-plus":{
+					"titleNView":{
+						"buttons":[{
+							"color":"#000000",
+							"colorPressed":"#BBBBBB",
+							"float":"right",
+							"fontSize":"22px",
+							"fontSrc":"/static/font/iconfont.ttf",
+							"text":"\ue8bc"
+						}]
+					}
+				}
+			}
+		}
+		,{
+		    "path" : "pages/detail/detail",
+		    "style" : {}
+		}
+        ,{
+            "path" : "pages/myInfo/myInfo",
+            "style" : {
+				"navigationBarTitleText":"My",
+				"app-plus":{
+					"titleNView":{
+						"buttons":[{
+							"type":"menu"
+						}]
+					}
+				}
+			}
+        }
+		,{
+		    "path" : "pages/message/message",
+		    "style" : {
+				"navigationBarTitleText":"Message",
+				"enablePullDownRefresh":true,
+				"app-plus":{
+					"titleNView":{
+						"buttons":[{
+							"color":"#333333",
+							"colorPressed":"#FD597C",
+							"float":"left",
+							"fontSize":"20px",
+							"fontSrc":"/static/font/iconfont.ttf",
+							"text":"\ue63b"
+						}, {
+							"color":"#333333",
+							"colorPressed":"#FD597C",
+							"float":"right",
+							"fontSize":"20px",
+							"fontSrc":"/static/font/iconfont.ttf",
+							"text":"\ue649"
+						}]
+					}
+				}
+			}
+		}
+        ,{
+            "path" : "pages/search/search",
+            "style" : {
+				"enablePullDownRefresh":true,
+				"app-plus": {
+					"scrollIndicator":"none", //隐藏滚动条
+					//搜索框配置
+					"autoBackButton":false,
+					"titleNView":{
+						"autoBackButton":false,
+						"searchInput":{
+							"align":"left",
+							"backgroundColor":"#F7F7F7",
+							"borderRadius":"4px",
+							"placeholder":"Search for anything..",
+							"placeholderColor":"#CCCCCC",
+							"disabled":false
+						},
+						//配置按钮
+						"buttons":[
+							{
+								"color":"#000000",
+								"colorPressed":"#BBBBBB",
+								"float":"right",
+								"fontSize":"16px",
+								"text":"取消"
+								
+							}
+						]
+					}
+					
+				}
+			}
+        },
+		{
+			"path":"pages/login/login",
+			"style":{
+				"app-plus":{
+					"titleNview":false
+				}
+			}
+		}
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "Publish",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"color":"#ADADAD",
+		"selectedColor":"#000000",
+		"backgroundColor":"#FFFFFF",
+		"borderStyle":"black",
+		"list": [{
+				"pagePath": "pages/index/index",
+				"iconPath": "static/tabbar/index.png",
+				"selectedIconPath": "static/tabbar/index2ed.png",
+				"text": "Index"
+			},
+			{
+				"pagePath": "pages/publish/publish",
+				"iconPath": "static/tabbar/publish.png",
+				"selectedIconPath": "static/tabbar/publish2ed.png",
+				"text": "Publish"
+			},{
+				"pagePath": "pages/message/message",
+				"iconPath": "static/tabbar/messaage.png",
+				"selectedIconPath": "static/tabbar/message2ed.png",
+				"text": "Message"
+			},{
+				"pagePath": "pages/myInfo/myInfo",
+				"iconPath": "static/tabbar/myInfo2.png",
+				"selectedIconPath": "static/tabbar/myInfo2ed.png",
+				"text": "My"
+			}
+		]
+	}
+}
