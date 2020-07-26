@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "bottom-input": "/components/common/bottom-input",
+    "divider": "/components/common/divider"
+  }
+}

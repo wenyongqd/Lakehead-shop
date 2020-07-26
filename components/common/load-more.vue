@@ -1,11 +1,11 @@
 <template>
-	<view class="load-more">{{loadtext}}</view>
+	<view class="load-more">{{loadmore}}</view>
 </template>
 
 <script>
 	export default {
 		props:{
-			loadtext:String
+			loadmore:String
 		}
 	}
 </script>

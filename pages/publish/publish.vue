@@ -79,8 +79,6 @@
 						dataType:"json",
 						success:res => {
 							console.log(res)
-							debugger
-							console.log(item_desc)
 							console.log(res.data.code)
 							if(res.data.code == 200){
 								resolve(res.data.data)

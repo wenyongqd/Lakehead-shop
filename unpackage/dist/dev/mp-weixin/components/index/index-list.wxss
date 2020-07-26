@@ -20,10 +20,11 @@
 	margin-right: 10rpx;
 }
 .index-list1>view.data-v-20a05451:last-child{
-	background-color: #F4F4F4;
+	border-radius: 10rpx;
+	background-color: #f2549f;
 	border-radius: 5ups;
 	padding: 0 10rpx;
-	color: #949494;
+	color: #ffffff;
 }
 .index-list2.data-v-20a05451{
 	padding-top: 15rpx;

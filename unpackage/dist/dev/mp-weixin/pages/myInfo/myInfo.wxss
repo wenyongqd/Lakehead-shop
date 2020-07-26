@@ -1,0 +1,15 @@
+
+.ccc{
+    color:#f5f8ff;
+}
+.bg-set{
+	background-image: url(/static/common/background.png);
+	position: fixed;
+	    width: 100%;
+		height: 160px;
+	    top: 0;
+	    left: 0;
+	    z-index: -1;
+}
+
+

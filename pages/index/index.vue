@@ -25,7 +25,7 @@
 						<index-list :item="item" :index="index"></index-list>
 						</block>
 						<!-- 上拉加载 -->
-						<load-more :loadtext="items.loadtext"></load-more>
+						<load-more :loadmore="items.loadmore"></load-more>
 					</template>
 					<template v-else>
 						<no-thing></no-thing>
@@ -61,8 +61,7 @@
 				tabBars:[
 					{ name:"Hot",id:"hot" },
 					{ name:"Recent",id:"recent" },
-					{ name:"For you",id:"list" },
-					
+					{ name:"For you",id:"list" },		
 				],
 				newslist:[
 					// 	loadtext:"上拉加载更多",
@@ -96,6 +95,10 @@
 					this.swiperheight = res.windowHeight - uni.upx2px(101)
 			    }
 			});
+			// 监听刷新首页
+			uni.$on('updateIndex',()=>{
+				this.getData()
+			})
 			this.getData()
 		},
 		//监听搜索框点击事件
@@ -105,36 +108,55 @@
 
 			});
 		},
+		onUnload() {
+			uni.$off('updateIndex',(e)=>{})
+		},
 		methods: {
 			getData(){
 				let index = this.tabIndex;
 				let id = this.tabBars[index].id;
 				// 获取分类
-				this.$H.get('/item/'+id+'0/6').then(res => {
+				// this.$H.get('/item/'+id+'0/6').then(res => {
 					
-					let [err, result] = res
+				// 	let [err, result] = res
 
-					// this.tabBars = result.data.data.list
-					//根据分类列表生成数据
+				// 	// this.tabBars = result.data.data.list
+				// 	//根据分类列表生成数据
 
-					var arr = []
-					for (let i = 0; i < this.tabBars.length; i++) {
-						//生成列表模板
-						arr.push({
-							// 1 上拉加载更多 2 加载中 3 没有更多了
-							loadmore: "上拉加载更多",
-							list:[],
-							page:1
-						})
-					}
-					this.newslist = arr
+				// 	var arr = []
+				// 	for (let i = 0; i < this.tabBars.length; i++) {
+				// 		//生成列表模板
+				// 		arr.push({
+				// 			// 1 上拉加载更多 2 加载中 3 没有更多了
+				// 			loadmore: "上拉加载更多",
+				// 			list:[],
+				// 			page:1
+				// 		})
+				// 	}
+				// 	this.newslist = arr
+				
+				
+				var arr = []
+				for (let i = 0; i < this.tabBars.length; i++) {
+					// 生成列表模板
+					arr.push({
+						// 1.上拉加载更多  2.加载中... 3.没有更多了
+						loadmore:"上拉加载更多",
+						list:[],
+						page:1,
+						firstLoad:false
+					})
+				}
+				this.newslist = arr
+				
+				
 					// 获取第一个分类的数据
 					if (this.tabBars.length) {
 						this.getList()
 					}
-					console.log(this.newslist[0])
+				// 	console.log(this.newslist[0])
 					
-				})
+				// })
 			},
 			selectedNote (item) {
 			    this.$store.dispatch('getNote',item);
@@ -142,14 +164,28 @@
 			},
 			// 上拉加载
 			loadmore(index){
+				console.log("进土里进土里进土里进土里进土里进土里")
 				// 拿到当前列表
-				let item = this.newlist[index]
+				console.log(index)
+				let item = this.newslist[index]
 				// 判断是否处于可加载状态
+
 				if (item.loadmore !== '上拉加载更多') return
 				// 修改当前列表加载状态
 				item.loadmore = '加载中...'
 				//请求数据
 				item.page++
+				this.getList()
+				console.log(item.page)
+				// // 拿到当前列表
+				// let item = this.newsList[index]
+				// // 判断是否处于可加载状态（上拉加载更多）
+				// if (item.loadmore !== '上拉加载更多') return;
+				// // 修改当前列表加载状态
+				// item.loadmore = '加载中...'
+				// // 请求数据
+				// item.page++;
+				// this.getList()
 				
 				// if(this.newslist[index].loadtext!="上拉加载更多"){ return; }
 				// // 修改状态
@@ -187,11 +223,27 @@
 				let index = this.tabIndex
 				let id = this.tabBars[index].id
 				let page = this.newslist[index].page
+				console.log(page+"进去看看")
+				let isrefresh = page === 1
 
-				// this.$H.get('/item/'+id+'0/6')
-				this.$H.get('/item/'+id+'/0/6').then(res2 => {
+
+				this.$H.get('/item/'+id+'/'+page+'/6').then(res2 => {
 					let [err2, result2] = res2
-
+					// 根据分类生成列表
+					// var arr = []
+					// for (let i = 0; i < this.tabBars.length; i++) {
+					// 	// 生成列表模板
+					// 	arr.push({
+					// 		// 1.上拉加载更多  2.加载中... 3.没有更多了
+					// 		loadmore:"上拉加载更多",
+					// 		list:[],
+					// 		page:1,
+					// 		firstLoad:false
+					// 	})
+					// }
+					// this.newslist = arr
+					
+					console.log(this.newslist)
 					let list = result2.data.data.map(v=>{
 						return {
 							userpic:v.avatar,
@@ -212,7 +264,15 @@
 							sharenum:10
 						}
 					})
-					this.newslist[index].list = list
+					// this.newslist[index].list = list
+					console.log(isrefresh)
+					this.newslist[index].list = isrefresh ? list : [...this.newslist[index].list,...list];
+					// console.log(this.newsList[index].loadmore)
+					this.newslist[index].loadmore  = list.length < 6 ? '没有更多了' : '上拉加载更多';
+					
+					if (isrefresh) {
+						this.newslist[index].firstLoad = true
+					}
 				})
 			},
 			//滑动事件
@@ -227,7 +287,8 @@
 <style>
 	.header{
 		background-color: #39b1ff;
-		
+		/* position: fixed; */
+		position: relative;
 	}
 	.image-size{
 		height: 60upx;

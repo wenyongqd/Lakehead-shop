@@ -79,7 +79,7 @@
 
 <script>
 	import uniStatusBar from '@/components/uni-ui/uni-status-bar/uni-status-bar.vue';
-	import otherLogin from '@/components/common/other-login.vue';
+	// import otherLogin from '@/components/common/other-login.vue';
 	import {
 		mapMutations
 	} from 'vuex';
@@ -87,7 +87,7 @@
 	export default {
 		components: {
 			uniStatusBar,
-			otherLogin
+			// otherLogin
 		},
 		data() {
 			return {
@@ -359,6 +359,9 @@
 			},
 			getWeixinAccess: (value) => {
 				return new Promise((resolve, reject) => {
+					console.log("获取微信信息")
+		
+
 					uni.login({
 						provider: value,
 						success: (res) => {
@@ -369,6 +372,7 @@
 							reject(err);
 						},
 					})
+					console.log("获取微信信息2")
 				});
 			},
 			getOpenId: (code) => {
@@ -413,7 +417,7 @@
 					let url = uni.getStorageSync("avatarUrl");
 					/* console.log(id + " " + name + " " + url) */
 					uni.request({
-						url: "http://192.168.2.26:53020/uaa/register/wx",
+						url: "http://3.96.104.51:53020/uaa/register/wx",
 						data: {
 							openId: id,
 							nickName: name,
@@ -444,12 +448,15 @@
 				/* uni.showLoading({
 					title: "授权登录中..."
 				}) */
+				console.log("进来啦进来啦进来啦进来啦进来啦")
 				this.getWeixinAccess(value)
 					.then((code) => {
+						console.log("获取微信信息0")
 						this.getOpenId(code)
 					})
 					.then(() => {
 						this.getWxInfo()
+						console.log("获取微信信息3")
 					})
 					.then(() => {
 						this.wxRegisterRequest()
