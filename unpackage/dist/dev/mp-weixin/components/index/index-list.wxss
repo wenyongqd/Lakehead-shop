@@ -1,58 +1,63 @@
 
-.index-list.data-v-20a05451{
+.index-list.data-v-b78c065c{
 	padding: 20rpx;
 	border-bottom: 1rpx solid #EFEFEF;
 	font-style: ;
 }
-.index-list1.data-v-20a05451{
+.index-list1.data-v-b78c065c{
 	-webkit-box-pack: justify;
 	-webkit-justify-content: space-between;
 	        justify-content: space-between;
 }
-.index-list1>view.data-v-20a05451:first-child{
+.index-list1>view.data-v-b78c065c:first-child{
 	color: #999999;
 	font-size: 32rpx;
 }
-.index-list1>view:first-child image.data-v-20a05451{
+.index-list1>view:first-child image.data-v-b78c065c{
 	width: 85rpx;
 	height: 85rpx;
-	border-radius: 15%;
+	-webkit-border-radius: 15%;
+	        border-radius: 15%;
 	margin-right: 10rpx;
 }
-.index-list1>view.data-v-20a05451:last-child{
-	background-color: #F4F4F4;
-	border-radius: 5ups;
+.index-list1>view.data-v-b78c065c:last-child{
+	-webkit-border-radius: 10rpx;
+	        border-radius: 10rpx;
+	background-color: #f2549f;
+	-webkit-border-radius: 5ups;
+	        border-radius: 5ups;
 	padding: 0 10rpx;
-	color: #949494;
+	color: #ffffff;
 }
-.index-list2.data-v-20a05451{
+.index-list2.data-v-b78c065c{
 	padding-top: 15rpx;
 	font-size: 32rpx;
 }
-.index-list3.data-v-20a05451{
+.index-list3.data-v-b78c065c{
 	padding-top: 15rpx;
 }
-.index-list3>image.data-v-20a05451{
+.index-list3>image.data-v-b78c065c{
 	width: 100%;
-	border-radius: 20rpx;
+	-webkit-border-radius: 20rpx;
+	        border-radius: 20rpx;
 }
-.index-list4 view.data-v-20a05451{
+.index-list4 view.data-v-b78c065c{
 	color: #999999;
 }
-.index-list4.data-v-20a05451{
+.index-list4.data-v-b78c065c{
 	margin-left: 10rpx;
 	padding: 10rpx 0;
 	-webkit-box-pack: justify;
 	-webkit-justify-content: space-between;
 	        justify-content: space-between;
 }
-.index-list4>view>view>view.data-v-20a05451{
+.index-list4>view>view>view.data-v-b78c065c{
 	margin-right: 7rpx;
 }
-.index-list4>view>view.data-v-20a05451:first-child{
+.index-list4>view>view.data-v-b78c065c:first-child{
 	margin-right: 20rpx;
 }
-.index-list4 .active.data-v-20a05451,.index-list4 .active>view.data-v-20a05451{
+.index-list4 .active.data-v-b78c065c,.index-list4 .active>view.data-v-b78c065c{
 	color: #FF0033;
 }
 

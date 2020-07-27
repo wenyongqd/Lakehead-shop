@@ -120,7 +120,6 @@
 			},
 			nameRegist() {
 				/* 数据合法性校验 */
-				/* if() */
 				console.log("注册")
 				const {
 					username,
@@ -168,7 +167,6 @@
 						timeout: 100000,
 						dataType: "json",
 						success: (infoRes) => {
-							/* infoRes = JSON.parse(res) */
 							console.log("login res: " + infoRes.data)
 							if (infoRes.data.access_token != null) {
 								uni.setStorageSync("jwt", infoRes.data.access_token);

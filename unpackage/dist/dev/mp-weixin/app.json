@@ -2,42 +2,53 @@
   "pages": [
     "pages/index/index",
     "pages/publish/publish",
+    "pages/user-chat/user-chat",
+    "pages/detail/detail",
     "pages/myInfo/myInfo",
-    "pages/search/search"
+    "pages/message/message",
+    "pages/search/search",
+    "pages/login/login",
+    "pages/editPublish/editPublish",
+    "pages/editItem/editItem"
   ],
   "subPackages": [],
   "window": {
     "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "湖首大学",
+    "navigationBarTitleText": "Publish",
     "navigationBarBackgroundColor": "#F8F8F8",
     "backgroundColor": "#F8F8F8"
   },
   "tabBar": {
     "color": "#ADADAD",
-    "selectedColor": "#1296DB",
+    "selectedColor": "#000000",
     "backgroundColor": "#FFFFFF",
     "borderStyle": "black",
     "list": [
       {
         "pagePath": "pages/index/index",
         "iconPath": "static/tabbar/index.png",
-        "selectedIconPath": "static/tabbar/indexed.png",
-        "text": "首页"
+        "selectedIconPath": "static/tabbar/index2ed.png",
+        "text": "Index"
       },
       {
         "pagePath": "pages/publish/publish",
         "iconPath": "static/tabbar/publish.png",
-        "selectedIconPath": "static/tabbar/published.png",
-        "text": "发布"
+        "selectedIconPath": "static/tabbar/publish2ed.png",
+        "text": "Publish"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "iconPath": "static/tabbar/messaage.png",
+        "selectedIconPath": "static/tabbar/message2ed.png",
+        "text": "Message"
       },
       {
         "pagePath": "pages/myInfo/myInfo",
-        "iconPath": "static/tabbar/myInfo.png",
-        "selectedIconPath": "static/tabbar/myInfoed.png",
-        "text": "我的"
+        "iconPath": "static/tabbar/myInfo2.png",
+        "selectedIconPath": "static/tabbar/myInfo2ed.png",
+        "text": "My"
       }
     ]
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap15.json"
+  "usingComponents": {}
 }

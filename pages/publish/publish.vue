@@ -52,7 +52,16 @@
 			}
 		},
 		onLoad(){
-			
+			if(this.$store.state.hasLogin == false){
+				uni.navigateTo({
+					url: '../login/login',
+				})
+			} 
+		},
+		onShow(){
+			if(this.$store.state.hasLogin == false){
+				this.$api.msg("Please Login First")
+			}
 		},
 		methods: {
 			...mapMutations(['login']),
@@ -79,7 +88,6 @@
 						dataType:"json",
 						success:res => {
 							console.log(res)
-							debugger
 							console.log(item_desc)
 							console.log(res.data.code)
 							if(res.data.code == 200){
@@ -118,15 +126,6 @@
 										}
 						});
 					})
-				/* this.$refs.imgUpload.upload(res=>{
-							   if(res.code==0){
-							   		//0为正常返回，将回调的线上图片数组 赋值给需要提交的表单里
-									//res.urlArray 线上路径图片数组
-									//TODO
-								}else{
-									//用户没有上传图片的返回 code码为400
-								}
-				}); */
 			}
 		},
 		onReady(){

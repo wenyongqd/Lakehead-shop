@@ -138,6 +138,22 @@
 				}
 			}
 		}
+        ,{
+            "path" : "pages/editPublish/editPublish",
+            "style" : {
+				"app-plus":{
+					"titleNview":false
+				}
+			}
+        }
+        ,{
+            "path" : "pages/editItem/editItem",
+            "style" : {
+            	"app-plus":{
+            		"titleNview":false
+            	}
+            }
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

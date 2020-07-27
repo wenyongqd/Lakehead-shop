@@ -1,0 +1,10 @@
+
+.header{
+	background-color: #39b1ff;
+}
+.image-size{
+	height: 60rpx;
+    margin-top: 13rpx;
+	margin-left: 58rpx;
+}
+

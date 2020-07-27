@@ -89,24 +89,7 @@
 					createdtime:"",
 					commentNum:10,
 					sharenum:10
-				},
-				// userpic:"",
-				// username:"111",
-				// isguanzhu:false,
-				// title:"",
-				// type:"",
-				// titlepic:"",
-				// images:[],
-				// infonum: {
-				// 	index:1, //0:没有操作;1:顶;2:踩
-				// 	zan:11,
-				// 	cai:1,
-				// },
-				// description:"",
-				// createdtime:"",
-				// commentNum:10,
-				// sharenum:10
-				
+				},	
 			}
 		},
 		methods:{

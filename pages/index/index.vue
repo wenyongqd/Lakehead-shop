@@ -64,30 +64,7 @@
 					{ name:"For you",id:"list" },
 					
 				],
-				newslist:[
-					// 	loadtext:"上拉加载更多",
-					// 	list:[
-					// 		{
-					// 			userpic:"../../static/demo/userpic/wenyong.png",
-					// 			username:"Wenyong",
-					// 			isguanzhu:false,
-					// 			title:"This is a title",
-					// 			type:"img",
-					// 			titlepic:"../../static/demo/datapic/travel.png",
-					// 			infonum: {
-					// 				index:1, //0:没有操作;1:顶;2:踩
-					// 				zan:11,
-					// 				cai:1,
-					// 			},
-					// 			description:"正品Gucci Jackie mini收藏版包包,蒂芙尼婴儿蓝金丝蓝偏光暗纹老花纹配金  巨美 美翻 五金一点点保存痕迹!没有使用过!中古保存品配件尘袋 百分百正品 真正爱的再来问!!",
-					// 			createdTime:"10 minutes ago",
-					// 			commentNum:10,
-					// 			sharenum:10
-					// 		}
-					// 	]
-					// },
-				]
-
+				newslist:[]
 			}
 		},
 		onLoad() {
@@ -110,7 +87,7 @@
 				let index = this.tabIndex;
 				let id = this.tabBars[index].id;
 				// 获取分类
-				this.$H.get('/item/'+id+'0/6').then(res => {
+				this.$H.get('/item/'+id+'/1/6').then(res => {
 					
 					let [err, result] = res
 
@@ -189,7 +166,7 @@
 				let page = this.newslist[index].page
 
 				// this.$H.get('/item/'+id+'0/6')
-				this.$H.get('/item/'+id+'/0/6').then(res2 => {
+				this.$H.get('/item/'+id+'/1/6').then(res2 => {
 					let [err2, result2] = res2
 
 					let list = result2.data.data.map(v=>{

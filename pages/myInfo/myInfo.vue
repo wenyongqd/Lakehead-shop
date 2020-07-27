@@ -47,7 +47,7 @@
 		<uni-list-item title="History" showExtraIcon @click="openHistory">
 			<text slot="icon" class="iconfont icon-lishi"></text>
 		</uni-list-item>
-		<uni-list-item title="Authentication" showExtraIcon>
+		<uni-list-item title="Edit Publishing" showExtraIcon @click="openOnSale">
 			<text slot="icon" class="iconfont icon-renzheng-copy1"></text>
 		</uni-list-item>
 		<uni-list-item title="Audition" showExtraIcon>
@@ -137,6 +137,14 @@
 					}
 				})
 			},
+			//统一跳转处理
+			navTo(url){
+				if(this.$store.state.hasLogin === false){
+					this.$api.msg(`Please Login First`);
+				} else {
+					uni.navigateTo({url})
+				}  
+			},
 			// 打开登录页
 			openLogin(){
 				uni.navigateTo({
@@ -147,6 +155,9 @@
 				uni.navigateTo({
 					url: '../history/history'
 				});
+			},
+			openOnSale(){
+				this.navTo('../editPublish/editPublish')
 			}
 		}
 	}

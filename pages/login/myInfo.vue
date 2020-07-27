@@ -90,7 +90,6 @@
 					timeout: 100000,
 					dataType:"json",
 					success:res => {
-						console.log("1234567");
 						if(res.data.code == 0){
 							this.$api.msg(res.data.message)
 						}else{
@@ -118,7 +117,6 @@
 			        	timeout: 100000,
 			        	dataType:"json",
 			        	success:(infoRes) => {
-							/* infoRes = JSON.parse(res) */
 							console.log("login res: " + infoRes.data)
 			        		if(infoRes.data.access_token != null){
 								uni.setStorageSync("jwt", infoRes.data.access_token);
@@ -166,7 +164,7 @@
 				this.logining = true;
 				this.namelogin(this.username, this.password)
 					.then((token)=>{this.token(token); this.getinfo(token)})
-					.then((res)=>{console.log(res);this.login(res); uni.navigateBack();})
+					.then((res)=>{this.login(res); uni.navigateBack();})
 			},
 			toMain(userName) {
 				this.login(userName);
