@@ -70,7 +70,7 @@
 
 		<other-login back></other-login>
 
-		<view class="flex align-center justify-center text-muted size" style="margin-top: 70rpx;">
+		<view class="flex align-center justify-center text-muted size" style="margin-top: 130rpx;">
 			By registing means agree<text class="text-primary size">《Lakehead Community License》</text>
 		</view>
 

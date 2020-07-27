@@ -47,6 +47,9 @@
 		<uni-list-item title="History" showExtraIcon @click="openHistory">
 			<text slot="icon" class="iconfont icon-lishi"></text>
 		</uni-list-item>
+		<uni-list-item title="Edit Publishing" showExtraIcon @click="openOnSale">
+			<text slot="icon" class="iconfont icon-renzheng-copy1"></text>
+		</uni-list-item>
 		<uni-list-item title="Authentication" showExtraIcon>
 			<text slot="icon" class="iconfont icon-renzheng-copy1"></text>
 		</uni-list-item>
@@ -147,6 +150,10 @@
 				uni.navigateTo({
 					url: '../history/history'
 				});
+			},
+			openOnSale(){
+				// this.navTo('../editPublish/editPublish')
+				uni.navigateTo({url:'../editPublish/editPublish'})
 			}
 		}
 	}

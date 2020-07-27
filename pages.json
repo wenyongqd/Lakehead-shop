@@ -121,7 +121,7 @@
 								"colorPressed":"#BBBBBB",
 								"float":"right",
 								"fontSize":"16px",
-								"text":"取消"
+								"text":"cancel"
 								
 							}
 						]
@@ -138,10 +138,32 @@
 				}
 			}
 		}
+		,{
+		    "path" : "pages/user-set/user-set",
+		    "style" : {
+				"navigationBarTitleText":"Setting"
+			}
+		},
+		{
+		    "path" : "pages/editPublish/editPublish",
+		    "style" : {
+				"app-plus":{
+					"titleNview":false
+				}
+			}
+		}
+		,{
+		    "path" : "pages/editItem/editItem",
+		    "style" : {
+		    	"app-plus":{
+		    		"titleNview":false
+		    	}
+		    }
+		}
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "Publish",
+		// "navigationBarTitleText": "Publish",
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
 	},
