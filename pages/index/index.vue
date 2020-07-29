@@ -244,8 +244,10 @@
 					// this.newslist = arr
 					
 					console.log(this.newslist)
+					console.log(result2.data.data)
 					let list = result2.data.data.map(v=>{
 						return {
+							productId:v.productId,
 							userpic:v.avatar,
 							username:v.nickName,
 							isguanzhu:false,
